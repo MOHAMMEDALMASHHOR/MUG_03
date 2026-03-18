@@ -24,7 +24,7 @@ export function DevCardScreen() {
       <SafeAreaView style={styles.errorContainer}>
         <Text style={{ fontSize: 48, marginBottom: 16 }}>🔍</Text>
         <Text style={styles.errorText}>Developer not found</Text>
-        <Pressable onPress={() => navigation.navigate("Main")}>
+        <Pressable onPress={() => navigation.navigate("Home")}>
           <Text style={styles.backLink}>← Back to Feed</Text>
         </Pressable>
       </SafeAreaView>
@@ -54,12 +54,12 @@ export function DevCardScreen() {
       <ScrollView bounces={false}>
         <View style={[styles.hero, { backgroundColor: gradStart }]}>
           <Pressable
-            onPress={() => navigation.navigate("Main")}
+            onPress={() => navigation.navigate("Home")}
             style={styles.backButton}
           >
             <Text style={styles.backButtonText}>←</Text>
           </Pressable>
-
+          
           <View style={styles.avatarContainer}>
             <Text style={styles.avatarText}>{dev.avatar}</Text>
           </View>

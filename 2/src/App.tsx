@@ -1,10 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Platform, StatusBar, LogBox } from "react-native";
-
-LogBox.ignoreLogs([
-  "InteractionManager has been deprecated",
-  "Cannot read property 'setItem' of undefined", // just in case it takes a reload to clear
-]);
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -17,7 +12,6 @@ import { DevCardScreen } from "./screens/DevCardScreen";
 import { CreateCardScreen } from "./screens/CreateCardScreen";
 import { LeaderboardScreen } from "./screens/LeaderboardScreen";
 import { AchievementsScreen } from "./screens/AchievementsScreen";
-import { QuizScreen } from "./screens/QuizScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -38,24 +32,19 @@ function TabNavigator() {
         tabBarInactiveTintColor: colors.textSecondary,
       })}
     >
-      <Tab.Screen
-        name="Feed"
-        component={HomeScreen}
+      <Tab.Screen 
+        name="Feed" 
+        component={HomeScreen} 
         options={{ tabBarIcon: ({ color }) => <Text style={{ fontSize: 22, color }}>🃏</Text> }}
       />
-      <Tab.Screen
-        name="Board"
-        component={LeaderboardScreen}
+      <Tab.Screen 
+        name="Board" 
+        component={LeaderboardScreen} 
         options={{ tabBarIcon: ({ color }) => <Text style={{ fontSize: 22, color }}>🏆</Text> }}
       />
-      <Tab.Screen
-        name="Quiz"
-        component={QuizScreen}
-        options={{ tabBarIcon: ({ color }) => <Text style={{ fontSize: 22, color }}>🧠</Text> }}
-      />
-      <Tab.Screen
-        name="Goals"
-        component={AchievementsScreen}
+      <Tab.Screen 
+        name="Goals" 
+        component={AchievementsScreen} 
         options={{ tabBarIcon: ({ color }) => <Text style={{ fontSize: 22, color }}>🎯</Text> }}
       />
     </Tab.Navigator>

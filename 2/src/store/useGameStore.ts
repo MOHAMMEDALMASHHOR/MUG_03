@@ -1,6 +1,5 @@
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { persist } from "zustand/middleware";
 
 interface LevelUpEvent {
   id: string;
@@ -57,9 +56,6 @@ export const useGameStore = create<GameStore>()(
 
       clearCompletedAchievements: () => set({ newlyCompletedAchievements: [] }),
     }),
-    {
-      name: "devcard-arena-game",
-      storage: createJSONStorage(() => AsyncStorage)
-    }
+    { name: "devcard-arena-game" }
   )
 );

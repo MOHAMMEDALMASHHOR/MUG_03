@@ -1,6 +1,5 @@
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { persist } from "zustand/middleware";
 import { Developer } from "../types";
 import { mockDevelopers } from "../utils/levelUtils";
 import { getLevelFromXP, getXPToNextLevel } from "../utils/xpCalculator";
@@ -71,14 +70,14 @@ export const useCardStore = create<CardStore>()(
             .map((d) =>
               d.id === id
                 ? {
-                  ...d,
-                  xp: newXP,
-                  level: newLevel,
-                  xpToNextLevel: getXPToNextLevel(newXP),
-                  hireCount: d.hireCount + 1,
-                  isAvailable: false,
-                  achievements: updatedAchievements,
-                }
+                    ...d,
+                    xp: newXP,
+                    level: newLevel,
+                    xpToNextLevel: getXPToNextLevel(newXP),
+                    hireCount: d.hireCount + 1,
+                    isAvailable: false,
+                    achievements: updatedAchievements,
+                  }
                 : d
             )
             .sort((a, b) => b.xp - a.xp)
@@ -97,9 +96,6 @@ export const useCardStore = create<CardStore>()(
             .map((d, i) => ({ ...d, rank: i + 1 })),
         })),
     }),
-    {
-      name: "devcard-arena-cards",
-      storage: createJSONStorage(() => AsyncStorage)
-    }
+    { name: "devcard-arena-cards" }
   )
 );
