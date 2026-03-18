@@ -1,17 +1,18 @@
 {
   "expo": {
-    "name": "KodKart",
-    "slug": "KodKart",
+    "name": "KodKartArena",
+    "slug": "KodKartArena",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/splash.png",
-    "scheme": "kodkart",
+    "icon": "./assets/images/icon.png",
+    "scheme": "kodkartarena",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "package": "com.muhammet.kodkartarena",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -19,8 +20,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.KodKart"
+      "predictiveBackGestureEnabled": false
     },
     "web": {
       "output": "static",
@@ -31,12 +31,12 @@
       [
         "expo-splash-screen",
         {
-          "image": "",
+          "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#020617",
+          "backgroundColor": "#ffffff",
           "dark": {
-            "backgroundColor": "#020617"
+            "backgroundColor": "#000000"
           }
         }
       ]
@@ -44,12 +44,6 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    },
-    "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "5dadea12-9e99-480f-a59e-509ca921abf8"
-      }
     }
   }
 }

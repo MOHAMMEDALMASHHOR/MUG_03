@@ -1,12 +1,12 @@
 {
-  "name": "gorevbir",
-  "main": "expo-router/entry",
+  "name": "kodkartarena",
+  "main": "expo/AppEntry.js",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint"
   },
